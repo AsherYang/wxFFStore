@@ -47,7 +47,10 @@
     <!--暂无数据显示-->
     <placeholder :show.sync="is_empty" message="暂无发现数据"></placeholder>
     <!--弹屏  types:0 图片  1：领红包   show 是否显示  @close 关闭回调  @callback 点击图片回调 或确定回调-->
-    <bombscreen :types.sync="tps" :show.sync="is_show_alert" @close.user="closeAlert" @callback.user="alertCallback"></bombscreen>
+    <!--
+    <bombscreen :types.sync="tps" :show.sync="is_show_alert" @close.user="closeAlert" @callback.user="alertCallback">
+    </bombscreen>
+    -->
   </view>
 </template>
 <script>
@@ -60,7 +63,7 @@ import BottomLoadMore from "../components/common/bottomLoadMore"
 import Placeholder from "../components/common/placeholder"
 export default class Home extends wepy.page {
   config = {
-    navigationBarTitleText: '菲菲小卖部',
+    navigationBarTitleText: 'FF 直营店',
   }
   components = {
     discover: Discover,
@@ -150,7 +153,7 @@ export default class Home extends wepy.page {
         console.log(res.target)
       }
       return {
-        title: '素洁服装厂',
+        title: 'FF 直营店',
         path: '/pages/home',
         success: function(res) {
           // 转发成功

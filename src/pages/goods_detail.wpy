@@ -16,6 +16,7 @@
         <!--         <view class="order_time {{purchasetype==2||special==1?'hidden':''}}">
           <timer :startTime.sync="startTime" :endTime.sync="endTime"></timer>
         </view> -->
+        
         <view class="other-price">批发价:280</view>
         <view class="other-price">分享价:280</view>
         <view class="share-box">
@@ -23,8 +24,11 @@
           <text>分享</text>
         </view>
       </view>
+      <!--
       <view class="baoyou">满{{detail.freeShipNum}}件包邮</view>
+      -->
     </view>
+    <!--
     <view class="order_num">
       <view class="doc" wx:if="{{special == 1}}">库存:
         <text class="num">{{detail.stockNum}}件</text>
@@ -36,8 +40,10 @@
         <text class="num">已拼{{detail.saleCount}}件</text>
       </view>
     </view>
+    -->
+    <!-- oyf
     <view class="block">
-      <!--       <view class="block_title">拼货流程</view>
+           <view class="block_title">拼货流程</view>
       <view class="block_content">
         <view class="process">
           新款展示
@@ -49,13 +55,14 @@
         <view class="doc">
           如若出现特殊情况外，发货时间则会延迟5-10天左右。
         </view>
-      </view> -->
+      </view> 
       <view class="block_title">商品评价(20)</view>
       <view class="block_content">
         <commentList :list.sync="commentList"></commentList>
         <view class="button-more-cmment" wx:if="{{commentList.length!==0}}" @tap="moreComment">查看更多评论</view>
       </view>
     </view>
+    
     <view class="spacing"></view>
     <view class="block">
       <view class="block_title">拼单说明</view>
@@ -65,6 +72,8 @@
         </view>
       </view>
     </view>
+    -->
+
     <view class="spacing"></view>
     <view class="block">
       <view class="block_title">商品信息</view>
@@ -244,7 +253,7 @@ export default class goodsDetail extends wepy.page {
     console.log("special===" + this.special);
   }
   onShow() {
-    this.goodsIsFavorite();
+    // this.goodsIsFavorite();
     //创建动画
     var animation = wx.createAnimation({
       transformOrigin: "50% 50%",
