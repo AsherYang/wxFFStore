@@ -17,12 +17,12 @@
           <timer :startTime.sync="startTime" :endTime.sync="endTime"></timer>
         </view> -->
         
-        <view class="other-price">批发价:280</view>
-        <view class="other-price">分享价:280</view>
-        <view class="share-box">
-          <i class="iconfont icon-share"></i>
-          <text>分享</text>
-        </view>
+        <view class="other-price">原价:280</view>
+        <!-- <view class="other-price">分享价:280</view> -->
+        <!-- <view class="share-box">  -->
+          <!--class="iconfont icon-share" plain=true open-type="share"    class="share-btn"-->
+          <button class="share-btn" plain="true" open-type="share">分享有礼</button>
+        <!-- </view>  -->
       </view>
       <!--
       <view class="baoyou">满{{detail.freeShipNum}}件包邮</view>
@@ -663,18 +663,24 @@ export default class goodsDetail extends wepy.page {
     }
     .other-price {
       font-size: 28rpx;
-      padding-left: 40rpx
+      padding-left: 40rpx;
+      flex-grow:1;
     }
     .share-box {
       text-align: center;
       font-size: 20rpx;
       padding-left: 50rpx;
-      flex: 1;
+    }
+    .share-btn {
+      border:1rpx solid #ccc;
+      font-size:20rpx;
+      text-align:center;
     }
     .icon-share {
       display: block;
-      padding-bottom: 5rpx;
-      font-size: 40rpx;
+      padding-bottom: 3rpx;
+      font-size: 30rpx;
+      border:0;
     }
     .baoyou {
       color: #808080;
