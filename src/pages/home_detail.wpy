@@ -103,6 +103,7 @@ export default class HomeDetail extends wepy.page {
     //防止重复加载
     this.preventRepeatReuqest = false;
     this.sort = 1;
+    console.log("页面内传参：" + option.code);
     console.log("id==="+this.catCode);
     //this.list = bb.result.products;
     //this.$apply();
