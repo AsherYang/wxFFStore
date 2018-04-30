@@ -105,6 +105,7 @@ export default class Home extends wepy.page {
         size: size || 10
       }
     });
+    console.log("json===> " + json.data.code + " ,logo = " + json.data.list[0].logo);
     if (json.data.code == 0) {
       that.discoverList = [...that.discoverList, ...json.data.list];
 
@@ -125,6 +126,7 @@ export default class Home extends wepy.page {
     const json = await api.getAdList({
       query: {}
     });
+    console.log("json===> " + json.data.code + " ,logo = " + json.data.list[0].picUrl);
     if (json.data.code == 0) {
       this.adList = json.data.list;
       this.$apply();
@@ -153,7 +155,7 @@ export default class Home extends wepy.page {
         console.log(res.target)
       }
       return {
-        title: 'FF 直营店',
+        title: '素洁服装厂',
         path: '/pages/home',
         success: function(res) {
           // 转发成功
