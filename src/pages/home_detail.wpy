@@ -72,6 +72,7 @@ export default class HomeDetail extends wepy.page {
         skuval: this.skuval
       }
     });
+    console.log("getGoodList====> " + json.data.category.name);
     if (json.data.code == 0) {
       that.cate = json.data.category;
       wx.setNavigationBarTitle({  title: that.cate.name})
