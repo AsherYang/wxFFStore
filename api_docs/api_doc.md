@@ -31,3 +31,11 @@
 ## 商品详情 goods_detail.wpy
 
 > goods_detail.md
+
+## 分类页 classify.wpy
+
+> classify_root_category_list.md
+
+> classify_child_Goods_category_list.md
+
+
