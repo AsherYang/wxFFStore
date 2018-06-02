@@ -1,9 +1,8 @@
 # 首页发现列表
 
 ## 接口
-```
-https://sujiefs.com//api/mall/discoverList?page=1&size=10&sign=1c0c67948371e91081fac39137d990c4&time=20180430145004
-```
+
+> https://sujiefs.com//api/mall/discoverList?page=1&size=10&sign=1c0c67948371e91081fac39137d990c4&time=20180430145004
 
 ## 返回值
 ```

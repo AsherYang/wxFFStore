@@ -2,9 +2,7 @@
 
 ## 接口
 
-```
-https://sujiefs.com//api/mall/goods?id=2c9257a16136c3d60162f09204f04e9f&sign=3738dc223722ee7bb572c925a6764ba2&time=20180503230750
-```
+> https://sujiefs.com//api/mall/goods?id=2c9257a16136c3d60162f09204f04e9f&sign=3738dc223722ee7bb572c925a6764ba2&time=20180503230750
 
 ## 返回值
 

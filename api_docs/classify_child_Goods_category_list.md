@@ -6,9 +6,7 @@
 
 ## 接口
 
-```
-https://sujiefs.com//api/mall/childGoodsCatetoryList?rootCategoryCode=004&sign=0888c90ab7d3d9e359af8e20764b482c&time=20180507223326
-```
+> https://sujiefs.com//api/mall/childGoodsCatetoryList?rootCategoryCode=004&sign=0888c90ab7d3d9e359af8e20764b482c&time=20180507223326
 
 ## 返回值
 

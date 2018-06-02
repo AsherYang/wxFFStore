@@ -1,9 +1,8 @@
 # 首页banner 广告列表
 
 ## 接口
-```
-https://sujiefs.com//api/adverts/list?sign=3dbb945130215a42abbf51643202ee44&time=20180430145841
-```
+
+> https://sujiefs.com//api/adverts/list?sign=3dbb945130215a42abbf51643202ee44&time=20180430145841
 
 ## 返回值
 ```
