@@ -16,7 +16,7 @@
         <!--         <view class="order_time {{purchasetype==2||special==1?'hidden':''}}">
           <timer :startTime.sync="startTime" :endTime.sync="endTime"></timer>
         </view> -->
-        
+
         <view class="other-price">原价:280</view>
         <!-- <view class="other-price">分享价:280</view> -->
         <!-- <view class="share-box">  -->
@@ -55,7 +55,7 @@
         <view class="doc">
           如若出现特殊情况外，发货时间则会延迟5-10天左右。
         </view>
-      </view> 
+      </view>
       <view class="block_title">商品评价(20)</view>
       <view class="block_content">
         <commentList :list.sync="commentList"></commentList>
@@ -99,7 +99,7 @@
     </view>
     <view class="detail-bottom">
       <view class="bottom-box">
-        <view class="item"  @tap="homePage">
+        <view class="item" @tap="homePage">
           <i class="iconfont icon-home"></i>
           <view class="doc">首页</view>
         </view>
@@ -160,11 +160,12 @@ import wepy from 'wepy'
 import {
   SYSTEM_INFO,
   USER_SPECICAL_INFO
-} from '../utils/constant';
-import tip from '../utils/tip'
-import api from '../api/api';
+} from '@/utils/constant';
+import tip from '@/utils/tip'
+import api from '@/api/api';
 import WxParse from "../plugins/wxParse/wxParse";
 import CommentList from "../components/comment_list"
+import timer from '@/components/common/timer'
 export default class goodsDetail extends wepy.page {
   config = {
     navigationBarTitleText: '商品详情'
@@ -222,7 +223,8 @@ export default class goodsDetail extends wepy.page {
   }
 
   components = {
-    commentList: CommentList
+    commentList: CommentList,
+    timer:timer
   }
   onLoad(option) {
     let that = this;
@@ -263,18 +265,17 @@ export default class goodsDetail extends wepy.page {
     })
     this.animation = animation;
   }
-  wxParseImgLoad(e) {
-  }
+  wxParseImgLoad(e) {}
 
   wxParseImgTap(e) {
     var that = this
     var nowImgUrl = e.target.dataset.src
     var tagFrom = e.target.dataset.from
-    if (typeof (tagFrom) != 'undefined' && tagFrom.length > 0) {
+    if (typeof(tagFrom) != 'undefined' && tagFrom.length > 0) {
       wx.previewImage({
         current: nowImgUrl, // 当前显示图片的http链接
         // urls: that.data[tagFrom].imageUrls // 需要预览的图片http链接列表
-        urls: that.bindData[tagFrom].imageUrls  // 注释掉上面的 换着一行 (http://blog.csdn.net/zhuming3834/article/details/74380079)
+        urls: that.bindData[tagFrom].imageUrls // 注释掉上面的 换着一行 (http://blog.csdn.net/zhuming3834/article/details/74380079)
       })
     }
   }
@@ -300,8 +301,6 @@ export default class goodsDetail extends wepy.page {
       WxParse.wxParse('detailInfo', 'html', that.detail.detailInfo, this);
       time.endTime = that.detail.validEndTime;
       time.startTime = that.detail.startTime;
-      /*time.startTime ="2017-07-15 16:00:00";
-      time.endTime = "2017-07-21 16:04:00";*/
       if (json.data.validDate == "0") {
         that.isValidDate = false;
         if (this.purchasetype == 1 && this.special != 1) {
@@ -316,7 +315,7 @@ export default class goodsDetail extends wepy.page {
       }
     }
     that.$apply();
-    //this.$invoke('timer', 'initTimer', time);
+    this.$invoke('timer', 'initTimer', time);
   }
   async addUserBrowser() {
     let that = this;
@@ -532,11 +531,8 @@ export default class goodsDetail extends wepy.page {
     takeFavorite() {
       if (this.isFavorite == true) {
         this.goodsUnFavorite();
-        console.log("取消收藏");
-        console.log(this.isFavorite);
       } else {
         this.goodsFavorite();
-        console.log("收藏")
       }
     },
     closeModel() {
@@ -690,7 +686,7 @@ export default class goodsDetail extends wepy.page {
     .order_time {
       position: absolute;
       right: 170rpx;
-      top: 40rpx;
+      top: 0rpx;
     }
   }
 }
@@ -725,7 +721,7 @@ export default class goodsDetail extends wepy.page {
   .block_content {
     padding: 38rpx 22rpx;
     .process {
-      font-size: 25rpx;
+      font-size: 20rpx;
       margin: 0 auto;
       border: 1px solid #999999;
       padding: 10rpx;

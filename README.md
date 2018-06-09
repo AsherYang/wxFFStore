@@ -1,3 +1,9 @@
+### 说明
+
+本项目参考 `dyq086/wepy-mall` 特别感谢。
+
+原项目地址： `https://github.com/dyq086/wepy-mall`
+
 ### 安装（更新） wepy 命令行工具。
 	npm install wepy-cli -g
 
@@ -8,7 +14,7 @@
 	npm run dev
 
 ### 生产压缩
-	npm run build //上传代码时，请先执行此代码，否则会提示包体积过大
+	npm run build //上传代码时，请先执行此命令，否则会提示包体积过大
 
 
 ### 开发使用说明(重要)
