@@ -12,7 +12,7 @@
 
 ### 1.2 返回值
 
-返回结果和 `host_category_goods_list.md` 返回结果类似
+接口与返回结果和 `host_category_goods_list.md` 类似
 
 ```
 {
