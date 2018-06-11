@@ -38,4 +38,33 @@
 
 > classify_child_Goods_category_list.md
 
+## 搜索页
+
+> search_goods_list.md
+
+## 购物车
+
+> goods_cart.md
+
+## 用户中心
+
+> user_center.md
+
+## 全部订单
+
+> goods_all_order.md
+
+### 待支付订单
+
+> goods_not_payment_order.md
+
+### 待收货订单
+
+> goods_not_receive_order.md
+
+### 已完成订单
+
+> goods_finish_order.md
+
+
 
