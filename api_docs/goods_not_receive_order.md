@@ -6,6 +6,18 @@
 
 ## 2. 返回值
 
+```
+{
+    "result": "005",
+    "reason": null,
+    "code": 0,
+    "page_total": 0,
+    "pageSize": 10,
+    "list": [],
+    "totalCount": 0,
+    "pageNum": 1
+}
+```
 
 ## 3. 订单总数
 

@@ -62,7 +62,7 @@
         <view class="button-more-cmment" wx:if="{{commentList.length!==0}}" @tap="moreComment">查看更多评论</view>
       </view>
     </view>
-    
+
     <view class="spacing"></view>
     <view class="block">
       <view class="block_title">拼单说明</view>
@@ -304,7 +304,7 @@ export default class goodsDetail extends wepy.page {
       if (json.data.validDate == "0") {
         that.isValidDate = false;
         if (this.purchasetype == 1 && this.special != 1) {
-          this.canOrder = false;
+          //this.canOrder = false;  // oyf modify
         }
       }
     } else {
