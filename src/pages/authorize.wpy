@@ -22,6 +22,7 @@ export default class Authorize extends wepy.page {
   }
   async onLoad() {
     let res = await wepy.getSetting()
+    console.log("--> settings: ", (res.authSetting)['scope.userInfo']);
     if ((res.authSetting)['scope.userInfo']) {
       wepy.switchTab({
         url: '/pages/home'
@@ -31,20 +32,26 @@ export default class Authorize extends wepy.page {
   async onGotUserInfo(e) {
     if (e.detail.errMsg == 'getUserInfo:ok') {
       let res = await wepy.login();
+      console.log("--> loginCode: ", res);
       if (res.code) {
         wepy.setStorageSync(USER_INFO, e.detail.userInfo);
+        console.log("--> USER_INFO: ", e.detail.userInfo);
         let systemInfo = wepy.getSystemInfoSync();
         wepy.setStorageSync(SYSTEM_INFO, systemInfo);
+        console.log("--> SYSTEM_INFO: ", systemInfo);
         let rlt = await api.wxJsCode2Session({
           query: {
             jsCode: res.code,
             nickName: e.detail.userInfo.nickName
           }
         })
+        console.log("---> wxJsCode rlt:", rlt);
       if (rlt.data.result) {
           let data = rlt.data;
+          console.log("--> USER_SPECICAL_INFO 111-->: ", data);
           if (data.data.openid) {
             wepy.setStorageSync(USER_SPECICAL_INFO, data.data);
+            console.log("--> USER_SPECICAL_INFO-->: ", data.data);
             wepy.switchTab({
               url: '/pages/home'
             })
