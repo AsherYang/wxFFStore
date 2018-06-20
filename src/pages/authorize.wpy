@@ -41,14 +41,12 @@ export default class Authorize extends wepy.page {
         let systemInfo = wepy.getSystemInfoSync();
         wepy.setStorageSync(SYSTEM_INFO, systemInfo);
         console.log("--> SYSTEM_INFO: ", systemInfo);
-        /** oyf 临时屏蔽处理
         let rlt = await api.wxJsCode2Session({
           query: {
             jsCode: res.code,
             nickName: e.detail.userInfo.nickName
           }
         })
-        */
         console.log("---> wxJsCode rlt:", rlt);
       if (rlt.data.result) {
           let data = rlt.data;
