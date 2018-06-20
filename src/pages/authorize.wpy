@@ -21,6 +21,7 @@ export default class Authorize extends wepy.page {
     navigationBarTitleText: '授权登录',
   }
   async onLoad() {
+    /** oyf 临时屏蔽处理
     let res = await wepy.getSetting()
     console.log("--> settings: ", (res.authSetting)['scope.userInfo']);
     if ((res.authSetting)['scope.userInfo']) {
@@ -28,6 +29,7 @@ export default class Authorize extends wepy.page {
         url: '/pages/home'
       })
     }
+    */
   }
   async onGotUserInfo(e) {
     if (e.detail.errMsg == 'getUserInfo:ok') {
@@ -39,12 +41,14 @@ export default class Authorize extends wepy.page {
         let systemInfo = wepy.getSystemInfoSync();
         wepy.setStorageSync(SYSTEM_INFO, systemInfo);
         console.log("--> SYSTEM_INFO: ", systemInfo);
+        /** oyf 临时屏蔽处理
         let rlt = await api.wxJsCode2Session({
           query: {
             jsCode: res.code,
             nickName: e.detail.userInfo.nickName
           }
         })
+        */
         console.log("---> wxJsCode rlt:", rlt);
       if (rlt.data.result) {
           let data = rlt.data;
