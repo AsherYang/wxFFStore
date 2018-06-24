@@ -20,7 +20,7 @@ const user2session = (params) => wxRequest(params, apiMall + "/api/wechat/user2s
 //商品接口---begin
 //首页发现商品接口
 const hostGoodsList = (params) => wxRequest(params, apiMall + '/api/home/hostGoodsList');
-const getHomeDisvocerList = (params) => wxRequest(params, apiMall + '/api/mall/discoverList');
+const getHomeDiscoverList = (params) => wxRequest(params, apiMall + '/api/mall/discoverList');
 //查询商品列表
 const getGoodsList = (params) => wxRequest(params, apiMall + '/api/mall/searchGoodsList');
 
@@ -147,7 +147,7 @@ const getAdList = (params) => wxRequest(params, apiMall + '/api/adverts/list');
 export default {
   hostGoodsList,
   getDiscoverList,
-  getHomeDisvocerList,
+  getHomeDiscoverList,
   getGoodsList,
   goodsDetail,
   wxJsCode2Session,

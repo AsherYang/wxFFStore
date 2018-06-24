@@ -94,12 +94,13 @@ export default class Home extends wepy.page {
   }
   async getDiscoverList(currentPage, size) {
     let that = this;
-    const json = await api.getHomeDisvocerList({
+    const json = await api.getHomeDiscoverList({
       query: {
         page: currentPage || 1,
         size: size || 10
       }
     });
+    console.log("json: ", json);
     console.log("json===> " + json.data.code + " ,logo = " + json.data.list[0].logo);
     if (json.data.code == 0) {
       that.discoverList = [...that.discoverList, ...json.data.list];
