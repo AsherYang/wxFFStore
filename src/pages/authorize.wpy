@@ -47,13 +47,12 @@ export default class Authorize extends wepy.page {
             nickName: e.detail.userInfo.nickName
           }
         })
-        console.log("---> wxJsCode rlt:", rlt);
+        // console.log("---> wxJsCode rlt:", rlt);
       if (rlt.data.result) {
           let data = rlt.data;
-          console.log("--> USER_SPECICAL_INFO 111-->: ", data);
-          if (data.data.openid) {
-            wepy.setStorageSync(USER_SPECICAL_INFO, data.data);
-            console.log("--> USER_SPECICAL_INFO-->: ", data.data);
+          // console.log("--> USER_SPECICAL_INFO -->: ", data);
+          if (data.openid) {
+            wepy.setStorageSync(USER_SPECICAL_INFO, data);
             wepy.switchTab({
               url: '/pages/home'
             })
