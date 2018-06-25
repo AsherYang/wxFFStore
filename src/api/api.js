@@ -3,7 +3,8 @@ import {
 } from '@/utils/wxRequest';
 
 let env = "-test" //-dev 或者 -test
-const apiMall = 'https://sujiefs.com/'
+//const apiMall = 'https://sujiefs.com/'
+const apiMall = 'https://ffstore.oyfstore.com'
 // const apiMall = 'http://localhost:8080/'
 
 /**
